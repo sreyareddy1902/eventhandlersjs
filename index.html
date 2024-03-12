@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html introduction</title>
+    <link rel="icon" href="./a.png">
+</head>
+<body>
+   
+
+    <!----onmouseover and onmouseout--
+<img src="a1.png" id="A" onmouseover="fun()" onmouseout="notfun()">
+<h1 id="B"></h1>
+
+<script>
+    function fun()
+    {
+
+        document.getElementById("B").innerHTML="welcome"
+    }
+    function notfun()
+    {
+        document.getElementById("B").innerHTML="Bye"
+    }
+</script>
+------>
+
+
+
+
+
+<!-----onmousedown and onmouseup-
+<input type="button" value="clickme" id="A" onmousedown="fun()" onmouseup="notfun()">
+<h1 id="B"></h1>      
+
+<script>
+    function fun()
+    {
+        let x=document.getElementById("A").value
+        document.getElementById("B").innerHTML="welcome"
+    }
+
+    function notfun()
+    {
+        let x=document.getElementById("A").value
+        document.getElementById("B").innerHTML="Bye"
+    }
+    
+</script>
+----->
+
+
+
+
+
+<!-------onkeydown and onkeyup--
+<input  id="A" onkeydown="fun()" onkeyup="notfun()">
+<h1 id="B"></h1>  
+
+
+<script>
+    function fun()
+    {
+        let x=document.getElementById("A").value
+        document.getElementById("B").innerHTML="welcome"
+    }
+
+    function notfun()
+    {
+        let x=document.getElementById("A").value
+        document.getElementById("B").innerHTML="bye"
+    }
+    
+</script>
+------>
+
+
+
+
+<!----oninput--
+<input  id="A" oninput="fun()" >
+<h1 id="B"></h1>  
+
+<script>
+    function fun()
+    {
+        let x=document.getElementById("A").value
+        document.getElementById("B").innerHTML=x
+    }
+</script>
+------>
+
+
+
+
+
+<!-------onload
+<h1 id="A"></h1>
+<script>
+    function fun()
+    {
+        document.getElementById("A").innerHTML="webpage is loaded"
+    }
+</script>
+----->
+
+
+
+<!-----onchange--
+<select name="" id="A" onchange="fun()">
+    <option>Hyderabad</option>
+    <option>Mumbai</option>
+    <option>Banglore</option>
+</select>
+<h1 id="B"></h1>
+
+<script>
+    function fun()
+    {
+        let x=document.getElementById("A").value
+        document.getElementById("B").innerHTML="Iam from"+" " +x
+    }
+    
+</script>
+---->
+
+
+ <!-----onfocus and onblur--
+    <form>
+        <input id="A" onfocus="fun()" onblur="notfun()">
+    </form>
+
+ <script>
+    function fun()
+    {
+        
+        document.getElementById("A").style.backgroundColor="pink"
+    }
+    function notfun()
+    {
+       
+        document.getElementById("A").style.backgroundColor="yellow"
+    }
+ </script>
+ ---->
+
+
+ <!----inline--
+ <input type="text">
+ <button id="A" onclick="fun()">change background</button>
+ 
+ <script>
+    function fun()
+    {   
+        document.body.style.backgroundColor="yellow"
+    }
+ </script>
+ ---->
+
+ <!---1.event properties--
+ <input type="text">
+ <button id="A">change background</button>
+ <script>
+    let btn=document.getElementById("A")
+    btn.onclick=fun
+    function fun()
+    {
+        document.body.style.backgroundColor="yellow"
+    }
+ </script>
+ ----->
+ 
+ <!----2.event properties--
+ <input type="text">
+ <button id="A">change background</button>
+ <script>
+    let btn=document.getElementById("A")
+    btn.onclick=function(){
+        document.body.style.backgroundColor="blue"
+    }
+ </script>
+ ---->
+
+ <!---1.addEventListener--
+ <input type="text">
+ <button id="A">change background</button>
+ <script>
+    let btn=document.getElementById("A")
+    btn.addEventListener("click",fun)
+    function fun()
+    {
+        document.body.style.backgroundColor="yellow"
+    }
+ </script>
+----->
+
+ <!-----2.addEventListener---
+ <input type="text">
+ <button id="A">change background</button>
+ <script>
+    let btn1=document.getElementById("A")
+    btn.addEventListener('click',function(){
+        document.body.style.backgroundColor="pink"
+    })
+ </script>
+ ----->
+
+ <!----1.focus event using addEventListener--
+ Name:<input id="A" type="text">
+<button id="b1">change background</button>
+<script>
+    let btn=document.getElementById("A")
+    btn.addEventListener('focus',function()
+    {
+        document.body.style.backgroundColor="grey"
+    })
+</script>
+----->
+
+<!----2.focus event using addEventListener--
+Name:<input id="A" type="text">
+<button id="b1">change background</button>
+<script>
+    let btn=document.getElementById("A")
+    btn.addEventListener('focus',fun)
+    function fun()
+    {
+        btn.style.backgroundColor="grey"
+        btn.style.height="30px"
+    }
+</script>
+---->
+
+
+
+ <!-----example--
+ Password:
+ <input type="password" id="pass" placeholder="password" oninput="fun()">
+ <p id="result"></p>
+<script>
+    function fun()
+    {
+        let password=document.getElementById("pass").value
+        if((password.length>=1) && (password.length<=5))
+        {
+            document.getElementById("result").innerHTML="weak password"
+            document.getElementById("pass").style.border="2px solid red"
+            document.getElementById("pass").style.outline="1px solid red"
+        }
+        else if((password.length>=6) && (password.length<=10))
+        {
+            document.getElementById("result").innerHTML="strong password"
+            document.getElementById("pass").style.border="2px solid blue"
+            document.getElementById("pass").style.outline="1px solid blue"
+        }
+        else if(password.length>=11)
+        {
+            document.getElementById("result").innerHTML="Excellent password"
+            document.getElementById("pass").style.border="2px solid green"
+            document.getElementById("pass").style.outline="1px solid green"
+        }
+        else
+        {
+            document.getElementById("result").innerHTML=""
+        }
+    }
+    
+</script>
+------>
+
+
+
+</body>
+</html>
